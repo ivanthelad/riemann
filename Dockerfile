@@ -15,5 +15,5 @@ EXPOSE 5555 5555/udp 5556
 RUN wget   https://aphyr.com/riemann/riemann-0.2.10.tar.bz2   -O /tmp/riemann-0.2.10.tar.bz2
 RUN tar jxvf /tmp/riemann-0.2.10.tar.bz2 -C /opt/ 
 RUN chmod -R 777 /opt/riemann-0.2.10
-ADD riemann.config /opt/riemann/etc/riemann.config
-CMD ["/opt/bin/riemann", "riemann.config"]
+ADD riemann.config /opt/riemann-0.2.10/etc/riemann.config
+CMD ["/opt/riemann-0.2.10/bin/riemann", "/opt/riemann-0.2.10/etc/riemann.config"]

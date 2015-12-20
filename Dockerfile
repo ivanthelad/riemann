@@ -1,5 +1,5 @@
-FROM centos:centos7
-
+#FROM centos:centos7
+FROM rhel7.2
 RUN yum install java-1.8.0-openjdk  curl bzip2 -y
 #ENV JAVA_HOME /usr/lib/jvm/default-java/jre
 

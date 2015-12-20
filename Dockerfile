@@ -1,5 +1,5 @@
 #FROM centos:centos7
-FROM riemann-base
+FROM riemann-base:latest
 #RUN yum install java-1.8.0-openjdk  curl tar bzip2 -y
 #ENV JAVA_HOME /usr/lib/jvm/default-java/jre
 

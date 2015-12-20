@@ -12,6 +12,8 @@ EXPOSE 5555 5555/udp 5556
 #RUN yum -y --enablerepo=epel 
 #RUN yum --nogpgcheck localinstall https://aphyr.com/riemann/riemann-0.2.10-1.noarch.rpm
 
-RUN curl  https://aphyr.com/riemann/riemann-0.2.10.tar.bz2   -o /tmp/rieman.tar.bz2; tar jxvf /tmp/riemann-0.2.10.tar.bz2 -C /opt/ ; chmod -R 777 /opt/riemann-0.2.10
+RUN curl  https://aphyr.com/riemann/riemann-0.2.10.tar.bz2   -o /tmp/rieman.tar.bz2
+RUN tar jxvf /tmp/riemann-0.2.10.tar.bz2 -C /opt/ 
+RUN chmod -R 777 /opt/riemann-0.2.10
 ADD riemann.config /opt/riemann/etc/riemann.config
 CMD ["/opt/bin/riemann", "riemann.config"]
